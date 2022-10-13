@@ -7,6 +7,9 @@ jobs:
       - name: Dump GitHub context
         id: github_context_step
         run: echo '${{ toJSON(github) }}'
+      - name: Dump GitHub pull request context
+        id: github_pull_request_context_step
+        run: echo '${{ toJSON(github.event.pull_request) }}'
       - name: Dump job context
         run: echo '${{ toJSON(job) }}'
       - name: Dump steps context
